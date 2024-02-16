@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bookRouter from './routes/bookRoute.js'
+import userRouter from './routes/userRoute.js'
 dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URI)
@@ -21,7 +22,7 @@ app.listen(PORT, ()=>{
 })
 
 app.use('/api/books', bookRouter)
-
+app.use('/api/users',userRouter)
 
 
 
